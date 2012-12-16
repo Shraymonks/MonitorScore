@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<title>Monitor Board</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="stylesheet" href="app.css">
+	</head>
+	<body ng-controller="AppCtrl" ng-switch="mode" ng-cloak>
+		<div id="player" ng-switch-when="display" ng-style="style" resize="updateFontSize()">
+			<div class="name" ng-model="players[id].name" ng-blur="update()" contenteditable>Player</div>
+			<div class="score">{{players[id].score}}</div>
+		</div>
+		<ul ng-switch-when="admin">
+			<li ng-repeat="player in players">
+				<div ng-model="player.name" ng-blur="update()" contenteditable></div>
+				<div ng-model="player.score" ng-blur="update()" contenteditable></div>
+				<button ng-tap="decreasePoint(player)">-</button>
+				<button ng-tap="increasePoint(player)">+</button>
+			</li>
+		</ul>
+		<script src="/angular.min.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+[ng-cloak]{
+	display: none !important;
+}
+#player{
+	text-align: center;
+	-webkit-text-stroke: #000 4px;
+}
+
+#player .name{
+	font-size: 50%;
+}
+
+button{
+	height: 50px;
+	font-size: 20px;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	width: 50px;
+}
+
+ul{
+	font-size: 20px;
+	list-style-type: none;
+	padding: 0;
+}
+
+ul li{
+	border-bottom: 1px solid #ccc;
+	border-width: 1px 0;
+	padding: 10px 0;
+}
+
+ul li:last-child{
+	border: none;
+}
+
+ul li div, ul li button{
+	margin: 0 10px;
+}
+
+ul div{
+	display: inline-block;
+}
