@@ -66,6 +66,11 @@ angular.module('app', []).
 		$scope.mode = 'ontouchstart' in document ? 'admin' : 'display';
 
 		$scope.players = {};
+		$scope.noPlayers = true;
+
+		$scope.$watch('players', function (players) {
+			$scope.noPlayers = Object.keys(players).length === 0;
+		}, true);
 
 		$scope.updateFontSize = function () {
 			$scope.style = {fontSize: $window.innerHeight / 2 + 'px'};

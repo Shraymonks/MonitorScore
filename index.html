@@ -13,6 +13,7 @@
 			<div class="score">{{players[id].score}}</div>
 		</div>
 		<ul ng-switch-when="admin">
+			<div ng-show="noPlayers">No players online</div>
 			<li ng-repeat="player in players">
 				<div ng-model="player.name" ng-blur="update()" contenteditable></div>
 				<div ng-model="player.score" ng-blur="update()" contenteditable></div>
