@@ -1,4 +1,4 @@
-angular.module('app', []).
+angular.module('MonitorScore', []).
 
 	factory('socket', function ($rootScope) {
 		var socket = io.connect();
